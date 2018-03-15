@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         stringSeparator = "</span>"
         contentArray = contentArray[1].components(separatedBy: stringSeparator)
         
-        let weatherInfo = contentArray[0] as String
+        let weatherInfo = contentArray[0].replacingOccurrences(of: "&deg;", with: "°")
         
         return weatherInfo
     }
